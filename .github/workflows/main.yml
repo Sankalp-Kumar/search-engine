@@ -12,10 +12,16 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to Hugging Face
+      - name: Pull latest changes from Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: "your_hugging_face_username"  # Replace with your Hugging Face username
         run: |
           git remote set-url origin https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine
+          git pull https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: "your_hugging_face_username"  # Replace with your Hugging Face username
+        run: |
           git push https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
