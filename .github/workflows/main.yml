@@ -17,4 +17,5 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://Sank21:$HF_TOKEN@huggingface.co/spaces/Sank21/search_engine main
+        run: git push https://${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
+
