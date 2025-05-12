@@ -19,3 +19,4 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: git push https://${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
 
+##
