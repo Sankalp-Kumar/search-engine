@@ -12,8 +12,8 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      - name: Debug HF_TOKEN (remove after debugging)
-        run: echo "HF_TOKEN is set: ${{ secrets.HF_TOKEN }}"
+      - name: Debug HF_TOKEN
+        run: echo "HF_TOKEN=${{ secrets.HF_TOKEN }}"  # This will help you debug the token
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
