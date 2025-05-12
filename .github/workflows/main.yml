@@ -15,6 +15,7 @@ jobs:
       - name: Push to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: "your_hugging_face_username"  # Replace with your Hugging Face username
         run: |
-          git remote set-url origin https://huggingface.co/spaces/Sank21/search_engine
-          git push https://huggingface.co/spaces/Sank21/search_engine main
+          git remote set-url origin https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine
+          git push https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
