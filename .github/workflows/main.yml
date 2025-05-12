@@ -12,6 +12,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      - name: Set Git commit identity
+        run: |
+          git config --global user.email "sankalpkumar96@gmail.com"  # Replace with your email
+          git config --global user.name "Sankalp-Kumar"  # Replace with your name
       - name: Pull latest changes from Hugging Face Space and merge
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
