@@ -19,7 +19,7 @@ jobs:
         run: |
           git remote set-url origin https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine
           git config pull.rebase false  # Tell git to merge instead of rebasing
-          git pull https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main
+          git pull https://$HF_USERNAME:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/Sank21/search_engine main --allow-unrelated-histories
       - name: Push to Hugging Face
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
